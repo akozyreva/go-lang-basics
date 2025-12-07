@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 func main() {
 	var quantity int
@@ -33,4 +36,10 @@ func main() {
 
 	fmt.Println(lastName)
 	fmt.Println(phoneNumber)
+
+	var length1 float64 = 1.2
+	var width1 int = 2
+	//fmt.Println("Area is", width1*length1) // error -> different types! float64!=int
+	fmt.Println("Area is", width1*int(length1)) // all numbers are int, but it doesn't change length1 itself
+	fmt.Println(reflect.TypeOf(length1))
 }
