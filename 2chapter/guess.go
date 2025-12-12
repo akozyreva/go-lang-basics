@@ -24,21 +24,29 @@ func main() {
 	fmt.Println(target)
 	fmt.Println("I've chosen a random num between 1 and 100")
 	fmt.Println("Can you guess it?")
-	for i := countsOfAttempts; i > 0; i-- {
+	i := countsOfAttempts
+	// it's short form. full is for i := countsOfAttempts; i > 0; i--
+	for i > 0 {
 		fmt.Println("You have :", i, "attempts")
 		reader := bufio.NewReader(os.Stdin)
 		input, _ := reader.ReadString('\n')
 		input = strings.TrimSuffix(input, "\n")
-		inputNum, err := strconv.Atoi(input)
+		inputNum, err := strconv.Atoi(input) // convert to int
 		if err != nil {
 			log.Fatal(err)
 		}
+		i--
 		if inputNum == target {
 			fmt.Println("Your guess was correct. End")
 			isGuessedNum = true
 			break
 		} else {
 			fmt.Println("Ooops.. try again")
+			if inputNum > target {
+				fmt.Println("Your guess was HIGH")
+			} else {
+				fmt.Println("Your guess was LOW")
+			}
 		}
 	}
 	if !isGuessedNum {
