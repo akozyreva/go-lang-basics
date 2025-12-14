@@ -34,3 +34,9 @@ Lower case - local usage only.
 `fmt.Println` - upper case -> can be exported
 
 `quantity` := 4 -> no
+
+
+to get in terminal information about method:
+```
+go doc fmt.Println
+```
