@@ -14,3 +14,9 @@ package naming convention:
 
 - starts with small letter and short word if possible: `fmt`
 - use 1 word, if not possible, write it all as one: `strconv`
+
+to run multiple files with `func main()` run them directly:
+
+```
+go run tocelsius.go
+```
