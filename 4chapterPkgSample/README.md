@@ -20,3 +20,22 @@ to run multiple files with `func main()` run them directly:
 ```
 go run tocelsius.go
 ```
+
+greeting package - sample of nested package files
+
+get documentation from package
+
+```
+❯ go doc keyboard
+package keyboard // import "4chapterPkgSample/keyboard"
+
+Package keyboard this documentation will be visible, when you run `go doc` cmd
+
+func GetFloat() (float64, error)
+```
+
+get documentation from function:
+
+```
+go doc keyboard.GetFloat
+```

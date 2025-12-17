@@ -40,3 +40,11 @@ to get in terminal information about method:
 ```
 go doc fmt.Println
 ```
+
+to refer information about packaging:
+
+- install pkg
+- set local pkg
+- set local project
+
+see samples `4chapterPkgSample`, `4chapterInstallPkg`

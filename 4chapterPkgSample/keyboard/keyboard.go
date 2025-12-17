@@ -1,3 +1,4 @@
+// Package keyboard this documentation will be visible, when you run `go doc` cmd
 package keyboard
 
 import (
@@ -7,6 +8,7 @@ import (
 	"strings"
 )
 
+// GetFloat reads a number from keyboard
 func GetFloat() (float64, error) {
 	reader := bufio.NewReader(os.Stdin)
 	input, err := reader.ReadString('\n')
