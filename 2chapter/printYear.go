@@ -15,4 +15,9 @@ func main() {
 	var year int = now.Year()
 	fmt.Println(reflect.TypeOf(now))
 	fmt.Println(year)
+
+	// Add your code below:
+	fmt.Print("Print", "is", "different")
+	fmt.Print("See?")
+	//PrintisdifferentSee? no spaces, no new row
 }
