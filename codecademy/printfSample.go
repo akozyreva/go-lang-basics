@@ -14,4 +14,11 @@ func main() {
 	fmt.Printf("Working with a %T.", floatExample)
 	//Working with a float64.
 
+	step1 := "Breathe in..."
+	step2 := "Breathe out..."
+
+	// Add your code below:
+	meditation := fmt.Sprintln(step1, step2) // it's format string and return string value
+	fmt.Println(meditation)
+
 }
