@@ -7,6 +7,7 @@ import (
 
 func main() {
 	var notes [7]string
+	fmt.Println(notes)
 	notes[0] = "do"
 	notes[1] = "re"
 	notes[2] = "mi"
