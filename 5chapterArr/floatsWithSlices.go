@@ -1,4 +1,4 @@
-// go run floats.go
+// go run floatsWithSlices.go
 // [71.8 56.2 89.5]s.go
 package main
 
@@ -10,8 +10,8 @@ import (
 	"strconv"
 )
 
-func getFloats(fileName string) ([3]float64, error) {
-	var floats [3]float64
+func getFloats(fileName string) ([]float64, error) {
+	floats := make([]float64, 0)
 	file, err := os.Open(fileName)
 	if err != nil {
 		log.Fatal(err)
@@ -19,19 +19,20 @@ func getFloats(fileName string) ([3]float64, error) {
 	scanner := bufio.NewScanner(file) // this obj is required for reading
 	index := 0
 	for scanner.Scan() {
-		floats[index], err = strconv.ParseFloat(scanner.Text(), 64)
+		data, err := strconv.ParseFloat(scanner.Text(), 64)
 		if err != nil {
-			return floats, err // more easier, just return unlucky arr
+			return nil, err // just return nil, because it's obvious, we don't have normal result
 		}
+		floats = append(floats, data)
 		index++
 		// error can be here, but we don't read it here
 	}
 	err = file.Close()
 	if err != nil {
-		return [3]float64{}, err
+		return nil, err
 	}
 	if scanner.Err() != nil { // returns empty arr and Err()
-		return [3]float64{}, scanner.Err()
+		return nil, scanner.Err()
 	}
 	return floats, nil
 
