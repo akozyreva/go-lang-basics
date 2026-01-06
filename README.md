@@ -48,3 +48,15 @@ to refer information about packaging:
 - set local project
 
 see samples `4chapterPkgSample`, `4chapterInstallPkg`
+
+init package project
+
+```
+ go mod init <folder>
+```
+
+and inside of it:
+
+```
+go run main.go
+```
