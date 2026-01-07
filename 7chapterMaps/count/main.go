@@ -1,3 +1,6 @@
+// Task is to count number of ocurrencies in file.
+// 1 solution - with map (light solution)
+// 2 solution - with arrays
 package main
 
 import (
@@ -15,6 +18,10 @@ func main() {
 	// count the number of votes
 	var names []string
 	var counts []int
+	countedVotes := make(map[string]int)
+	for _, name := range lines {
+		countedVotes[name]++
+	}
 	for _, name := range lines {
 		isNameFound := false
 		for _, sortedName := range names {
@@ -40,5 +47,10 @@ func main() {
 	fmt.Println(counts)
 	for i, name := range names {
 		fmt.Printf("%s: %d\n", name, counts[i])
+	}
+	fmt.Println(countedVotes)
+	// for for map
+	for name, countOfVotes := range countedVotes {
+		fmt.Printf("%s: %d\n", name, countOfVotes)
 	}
 }
