@@ -10,16 +10,20 @@ type subscriber struct {
 
 func showInfo(person *subscriber) {
 	fmt.Printf("Name: %s\n", person.name)
-	fmt.Printf("Rate: %f\n", person.rate)
+	fmt.Printf("Rate: %.2f\n", person.rate)
 	fmt.Printf("Active: %t\n", person.active)
 }
 
 func defaultSubscriber(name string) subscriber {
 	return subscriber{
 		name:   name,
-		rate:   0.0,
+		rate:   100.0,
 		active: true,
 	}
+}
+
+func applyDiscount(s *subscriber) {
+	s.rate = 4.99
 }
 
 func main() {
@@ -33,16 +37,18 @@ func main() {
 
 	subscriber1 := subscriber{
 		name:   "Bob",
-		rate:   0.1,
+		rate:   100.1,
 		active: true,
 	}
 	subscriber2 := subscriber{
 		name:   "John",
-		rate:   0.2,
+		rate:   200.2,
 		active: false,
 	}
 	fmt.Println(subscriber1, subscriber2)
 	showInfo(&subscriber1)
 	subscriber3 := defaultSubscriber("Jack")
+	showInfo(&subscriber3)
+	applyDiscount(&subscriber3)
 	showInfo(&subscriber3)
 }
