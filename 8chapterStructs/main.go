@@ -14,8 +14,9 @@ func showInfo(person *subscriber) {
 	fmt.Printf("Active: %t\n", person.active)
 }
 
-func defaultSubscriber(name string) subscriber {
-	return subscriber{
+// it returns pointer
+func defaultSubscriber(name string) *subscriber {
+	return &subscriber{
 		name:   name,
 		rate:   100.0,
 		active: true,
@@ -48,7 +49,7 @@ func main() {
 	fmt.Println(subscriber1, subscriber2)
 	showInfo(&subscriber1)
 	subscriber3 := defaultSubscriber("Jack")
-	showInfo(&subscriber3)
-	applyDiscount(&subscriber3)
-	showInfo(&subscriber3)
+	showInfo(subscriber3)
+	applyDiscount(subscriber3)
+	showInfo(subscriber3)
 }
