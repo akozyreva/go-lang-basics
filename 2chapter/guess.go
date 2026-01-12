@@ -18,8 +18,6 @@ func main() {
 	var isGuessedNum bool = false
 	seconds := time.Now().Unix() // current time in int (Unix())
 	fmt.Println(seconds)
-	// rand.Seed is needed to generate real random number
-	rand.Seed(seconds)
 	target := rand.Intn(100) + 1
 	fmt.Println(target)
 	fmt.Println("I've chosen a random num between 1 and 100")
